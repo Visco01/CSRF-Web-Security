@@ -1,0 +1,16 @@
+{% extends "base.j2" %}
+{% block title %}
+  Home
+{% endblock title %}
+{% block header %}
+  <h2>Home</h2>
+{% endblock header %}
+{% block content %}
+  {% if current_user %}
+    <div>
+      Your secret is "<strong>{{ current_user.secret }}</strong>". Keep it secret!
+    </div>
+  {% else %}
+    <div>Log in and I will show you your secret!</div>
+  {% endif %}
+{% endblock content %}

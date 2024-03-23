@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Web Security,Ethical Hacking" />
+    <meta name="description" content="WebSecLab" />
+    <title>LEAK PAGE</title>
+  </head>
+  <body>
+    <h1>LEAK PAGE</h1>
+    <ul>
+      {% for request in requests_log %}<li>{{ request }}</li>{% endfor %}
+    </ul>
+  </body>
+</html>
