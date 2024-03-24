@@ -6,7 +6,7 @@
   <h2>Login</h2>
 {% endblock header %}
 {% block content %}
-  <form action="{{ url_for("login_post") }}" method="post">
+  <form action="{{ url_for("vulnerable.login_post") }}" method="post">
     <div class="form-group">
       <label for="username">Username:</label>
       <input type="text"
