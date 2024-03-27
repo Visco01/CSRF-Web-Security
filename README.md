@@ -4,5 +4,5 @@ Simple Flask application containing both attacker and vulnerable's website. Cros
 ## Run the app with the following commands
 
 ```bash
-$ export FLASK_APP=app.py; flask init-db; flask run
+$ export FLASK_APP=app.py; flask run
 ```

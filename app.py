@@ -14,18 +14,6 @@ app.config["ATTACKER_DOMAIN"] = ATTACKER_DOMAIN
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 
-db_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'db')
-db_path = os.path.join(db_folder, 'db.sqlite')
-
-app.config.from_mapping(
-    SECRET_KEY='dev',
-    DATABASE=db_path,
-)
-
-from .db import db
-db.init_app(app)
-
-
 from .vulnerable.vulnerable import vulnerable_blueprint
 app.register_blueprint(vulnerable_blueprint)
 
