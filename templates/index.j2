@@ -10,6 +10,16 @@
     <div>
       Your secret is "<strong>{{ current_user.secret }}</strong>". Keep it secret!
     </div>
+    <h1>List of Posts</h1>
+    <ul>
+      {% for post in posts %}
+        <li>
+            <h2>{{ post.title }}</h2>
+            <p><strong>Author:</strong> {{ post.user.username }}</p>
+            <p>{{ post.desc }}</p>
+        </li>
+      {% endfor %}
+    </ul>
   {% else %}
     <div>Log in and I will show you your secret!</div>
   {% endif %}

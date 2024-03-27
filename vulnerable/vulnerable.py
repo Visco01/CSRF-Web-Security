@@ -11,6 +11,7 @@ from flask import (
     current_app
 )
 from .user import user_repository
+from .post import post_repository
 
 VULNERABLE_DOMAIN = "www.vulnerable.com:5000"
 
@@ -28,7 +29,7 @@ def inject_user():
 
 @vulnerable_blueprint.route("/", host=VULNERABLE_DOMAIN)
 def index():
-    return render_template("index.j2")
+    return render_template("index.j2", posts=post_repository.posts)
 
 
 @vulnerable_blueprint.route("/login", methods=["GET"], host=VULNERABLE_DOMAIN)
