@@ -31,6 +31,11 @@ def inject_user():
 def index():
     return render_template("index.j2", posts=post_repository.posts)
 
+@vulnerable_blueprint.route("/account", host=VULNERABLE_DOMAIN)
+def account():
+    return render_template("account.j2")
+
+
 @vulnerable_blueprint.route("/post", methods=["POST"], host=VULNERABLE_DOMAIN)
 def add_post():
     title = request.form["title"]

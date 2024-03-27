@@ -7,9 +7,6 @@
 {% endblock header %}
 {% block content %}
   {% if current_user %}
-    <div>
-      Your secret is "<strong>{{ current_user.secret }}</strong>". Keep it secret!
-    </div>
     <h2>Submit Your Information</h2>
     <form action="{{ url_for("vulnerable.add_post") }}" method="post">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
