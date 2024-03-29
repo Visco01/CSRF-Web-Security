@@ -1,5 +1,5 @@
 # CSRF-Web-Security
-Simple Flask application containing both attacker and vulnerable's website. Cross-Site Request Forgery assignment for Web Security course
+Simple Flask application containing a vulnerable's website. Cross-Site Request Forgery assignment for Web Security course
 
 ## Run the app with the following commands
 You can try to perform the attack using the script provided at the end of the readme.
@@ -16,6 +16,7 @@ $ export FLASK_APP=app.py; flask run
 And search for http://www.vulnerable.com:5000 in your browser (log in with credentials provided in user.py file)
 
 # CSRF and XSS Vulnerability Lab Report
+Written by Elisa Rizzo, Pietro Visconti
 
 ## Introduction:
 CSRF attacks aim to induce the victim to perform involuntary actions through which the attacker can modify or delete private information, or gain control of the target account.
