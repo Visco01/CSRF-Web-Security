@@ -18,15 +18,15 @@ And search for http://www.vulnerable.com:5000 in your browser (log in with crede
 # CSRF and XSS Vulnerability Lab Report
 Written by Elisa Rizzo, Pietro Visconti
 
-## Introduction:
+## Introduction
 CSRF attacks aim to induce the victim to perform involuntary actions through which the attacker can modify or delete private information, or gain control of the target account.
 
-## Attack Description:
+## Attack Description
 The chosen challenge is the last one proposed, regarding the use of an XSS vulnerability to implement a CSRF attack with the purpose of modifying the email of every user who visits the page containing the injected script.
 
 In this case, the attack consists of injecting a script that makes a request to the **my-account/change-password** endpoint. The focal point is to retrieve the victim's CSRF token so that the request created by the attacker is accepted. To do this, the script needs to access the document body and access the csrf attribute, as will be further detailed in the section regarding the attack reproduction on our Flask application.
 
-## Vulnerability in Flask Application:
+## Vulnerability in Flask Application
 To build the Flask application, we started from the application provided in the previous exercise and modified it to include the XSS vulnerability necessary to trigger the CSRF attack.
 
 Firstly, we configured the vulnerable site to include `flask_wtf.csrf`, the library required to activate protection against CSRF attacks, which generates a new token for each request, making the ones already used obsolete.
@@ -67,7 +67,7 @@ The attacker's script consists of the following steps:
         let csrf = document.getElementsByName("csrf_token")[0].value;
         let data = new FormData();
         data.append('csrf_token', csrf);
-        data.append('email', 'lol@gmail.com');
+        data.append('email', 'attacker@gmail.com');
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "http://www.vulnerable.com:5000/change-email", false);
         xhttp.send(data);
