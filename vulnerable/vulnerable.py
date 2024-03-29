@@ -10,6 +10,7 @@ from flask import (
     Blueprint,
     current_app
 )
+from markupsafe import escape
 from .user import user_repository
 from .post import post_repository, Post
 
@@ -40,6 +41,11 @@ def account():
 def add_post():
     title = request.form["title"]
     desc = request.form["description"]
+
+    # UNCOMMENT TO FIX XSS VULNERABILITY
+    # title = escape(request.form["title"])
+    # desc = escape(request.form["description"])
+
     post = Post(title, desc, get_current_user())
     post_repository.add_post(post)
     return redirect(url_for("vulnerable.index"))
