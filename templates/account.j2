@@ -1,0 +1,25 @@
+{% extends "base.j2" %}
+{% block title %}
+  Account
+{% endblock title %}
+{% block header %}
+  <h2>Account</h2>
+{% endblock header %}
+{% block content %}
+  {% if current_user %}
+    <div>
+      Username: "<strong>{{ current_user.username }}</strong>"
+      Email: "<strong>{{ current_user.email }}</strong>"
+    </div>
+    <form action="" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <label for="email">Insert a new email:</label><br>
+        <input type="text" id="email" name="email" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+  {% else %}
+    <div>You have to log in!</div>
+  {% endif %}
+{% endblock content %}

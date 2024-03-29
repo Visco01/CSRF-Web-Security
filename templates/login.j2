@@ -23,6 +23,7 @@
              name="password"
              required />
     </div>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <button type="submit" class="btn btn-primary">Login</button>
   </form>
 {% endblock content %}

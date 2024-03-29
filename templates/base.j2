@@ -20,6 +20,7 @@
           {% if current_user %}
             Welcome, {{ current_user['username'] }}!
             <a href="{{ url_for("vulnerable.logout") }}" class="btn btn-outline-light ml-2">Log Out</a>
+            <a href="{{ url_for("vulnerable.account") }}" class="btn btn-outline-light ml-2">Account</a>
           {% else %}
             You are not logged in!
             <a href="{{ url_for("vulnerable.login") }}" class="btn btn-outline-light ml-2">Log In</a>

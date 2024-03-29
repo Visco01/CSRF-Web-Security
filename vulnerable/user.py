@@ -1,8 +1,8 @@
 class User:
-    def __init__(self, username, password, secret):
+    def __init__(self, username, password, email):
         self.username = username
         self.password = password
-        self.secret = secret
+        self.email = email
 
 
 class UserRepository:
@@ -18,7 +18,7 @@ class UserRepository:
 
 user_repository = UserRepository(
     [
-        User("alice", "123", "15_th15_th3_r34l_l1f3"),
-        User("bob", "456", "15_th15_ju57_f4nt45y"),
+        User("alice", "123", "alice@gmail.com"),
+        User("bob", "456", "bob@gmail.com"),
     ]
 )
