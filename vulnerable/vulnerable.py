@@ -70,3 +70,10 @@ def login_post():
 def logout():
     session.pop("current_user")
     return redirect(url_for("vulnerable.index"))
+
+
+@vulnerable_blueprint.route("/change-email", methods=["POST"], host=VULNERABLE_DOMAIN)
+def change_email():
+    user = get_current_user()
+    user.email = request.form.get('email');
+    return user.email
