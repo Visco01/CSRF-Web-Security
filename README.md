@@ -1,10 +1,10 @@
 # CSRF-Web-Security
-Simple Flask application containing a vulnerable's website. Cross-Site Request Forgery assignment for Web Security course
+Simple Flask application containing a vulnerable website. Cross-Site Request Forgery assignment for Web Security course
 
 ## Run the app with the following commands
 You can try to perform the attack using the script provided at the end of the readme.
 
-### Put these lines in you hosts file
+### Put these lines in your hosts file
 ```text
 127.0.0.1 www.attacker.com
 127.0.0.1 www.vulnerable.com
